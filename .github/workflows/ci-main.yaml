@@ -47,7 +47,7 @@ jobs:
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ github.sha }}
 
-sbom-and-scan:
+  sbom-and-scan:
     needs: docker-build-push
     runs-on: self-hosted
     permissions:
@@ -97,7 +97,7 @@ sbom-and-scan:
         if: always()
         with:
           sarif_file: trivy-image-results.sarif
-
+  
   secret-scan:
     runs-on: ubuntu-latest
     steps:
