@@ -120,7 +120,7 @@ jobs:
             /scan/
 
   update-deployment:
-    needs: docker-build-push
+    needs: docker-build-sign
     runs-on: ubuntu-latest
     steps:
       - name: Checkout deployment repo
